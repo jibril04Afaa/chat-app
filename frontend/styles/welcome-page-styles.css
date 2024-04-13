@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.page-container .title-wrapper h1 {
+  font-size: 2rem;
+  padding: 1rem;
+}
+.page-container .img-container {
+  border-radius: 20px;
+}
+.page-container .img-container img {
+  width: 170px;
+  height: 300px;
+}
+.page-container .chat-app-txt-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-container .chat-app-txt-container p {
+  font-size: 1.8rem;
+}
+.page-container .start-messaging-btn button {
+  background-color: #1ED467;
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 1.2rem;
+  font-size: 2rem;
+  border: 0;
+}/*# sourceMappingURL=welcome-page-styles.css.map */

@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+// Variables
+$pFontSize: 1.2rem;
+p {
+    font-size: $pFontSize;
+}
+
+// Mixins
+
+
+
+// Page container
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    .title-wrapper {
+        h1 {
+            font-size: 2rem;
+            padding: 1rem;
+        }
+    }
+
+    // Image 
+    .img-container {
+        //border: 2px solid blue;
+        border-radius: 20px;
+        img {
+            width: 170px;
+            height: 300px;
+        }
+    }
+
+    // Chat app text
+    .chat-app-txt-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            font-size: 1.8rem;
+        }
+    }
+
+    // Button
+    .start-messaging-btn {
+        button {
+            background-color: #1ED467;
+            border-radius: 10px;
+            font-weight: bold;
+            padding: 1.2rem;
+            font-size: 2rem;
+            border: 0;
+        }
+    }
+}

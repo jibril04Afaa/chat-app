@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*
+            background-color: #1ED467;
+            border-radius: 10px;
+            font-weight: bold;
+            padding: 1.2rem;
+            font-size: 2rem;
+            border: 0;
+*/
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .sign-up-text {
+  margin: 2rem;
+}
+.container .signup-details-container .signup-form .form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container .signup-details-container .signup-form .form-container .name-label {
+  font-size: 2rem;
+}
+.container .signup-details-container .signup-form .form-container .name-input {
+  font-size: 2rem;
+}
+.container .signup-details-container .signup-form .form-container .email-label {
+  font-size: 2rem;
+}
+.container .signup-details-container .signup-form .form-container .email-input {
+  font-size: 2rem;
+}
+.container .signup-details-container .signup-form .form-container .password-label {
+  font-size: 2rem;
+}
+.container .signup-details-container .signup-form .form-container .password-input {
+  font-size: 2rem;
+}
+.container .signup-btn-container button {
+  background-color: #1ED467;
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 1.2rem;
+  margin: 2rem;
+  cursor: pointer;
+  font-size: 2rem;
+  border: 0;
+}/*# sourceMappingURL=sign-up-styles.css.map */
