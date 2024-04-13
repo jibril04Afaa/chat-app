@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+// container
+
+.container {
+    border: 2px solid green;
+    border-radius: 10px;
+    height: 60rem;
+    margin: 3rem;
+
+    // Title
+    .title {
+        padding: 2rem;
+        h1 {
+            text-align: center;
+        }
+    }
+
+    // Create New Chat
+    .create-new-chat-container {
+        button {
+            background-color: #1ED467;
+            border-radius: 10px;
+            font-weight: bold;
+            padding: 1.2rem;
+            margin: 2rem;
+            cursor: pointer;
+            font-size: 2rem;
+            border: 0;
+        }
+    }
+
+
+    // Actual chats
+    .display-chats-container {
+        .individual-chat-container {
+            display: flex;
+            justify-content: space-around;
+            border: 2px solid rebeccapurple;
+            border-radius: 10px;
+            // Image
+            .profile-pic-container {
+                img {
+                    border-radius: 50%;
+                }
+            }
+
+            // Contact Data (name, prev-message)
+            .contact-data {
+                display: flex;
+                justify-content: space-around;
+                flex-direction: column;
+                // Contact Name
+                .contact-name-container {
+                    .contact-name // (h3)
+                    {
+
+                    }
+                }
+
+
+                // Previous Message
+                .prev-msg-container {
+                    .prev-msg // (p)
+                    {
+
+                    }
+                }
+            }
+
+            // Time of prev msg
+            .time-of-prev-msg-container {
+                //border: 2px solid red;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                .time-of-prev-msg // (p)
+                {
+                }
+            }
+
+
+        }
+    } 
+
+
+
+}

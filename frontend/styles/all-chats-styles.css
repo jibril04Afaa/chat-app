@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  border: 2px solid green;
+  border-radius: 10px;
+  height: 60rem;
+  margin: 3rem;
+}
+.container .title {
+  padding: 2rem;
+}
+.container .title h1 {
+  text-align: center;
+}
+.container .create-new-chat-container button {
+  background-color: #1ED467;
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 1.2rem;
+  margin: 2rem;
+  cursor: pointer;
+  font-size: 2rem;
+  border: 0;
+}
+.container .display-chats-container .individual-chat-container {
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid rebeccapurple;
+  border-radius: 10px;
+}
+.container .display-chats-container .individual-chat-container .profile-pic-container img {
+  border-radius: 50%;
+}
+.container .display-chats-container .individual-chat-container .contact-data {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.container .display-chats-container .individual-chat-container .time-of-prev-msg-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}/*# sourceMappingURL=all-chats-styles.css.map */

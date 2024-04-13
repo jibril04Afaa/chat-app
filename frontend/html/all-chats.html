@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/frontend/styles/all-chats-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Title -->
+        <span class="title">
+            <h1>All Chats</h1>
+        </span>
+
+        <!-- Create New Chat-->
+        <div class="create-new-chat-container">
+            <button class="create-new-chat">Create New Chat</button>
+        </div>
+        
+
+        <!-- Actual chats -->
+        <div class="display-chats-container">
+            <div class="individual-chat-container">
+
+                <!-- Image -->
+                <div class="profile-pic-container">
+                    <img src="/frontend/img/pfps/barry.jpeg" width="200" height="200" class="profile-pic">
+                </div>
+
+                <div class="contact-data">
+                    <!-- Contact Name -->
+                    <div class="contact-name-container">
+                        <h3 class="contact-name">The Flash (Barry Allen)</h3>
+                    </div>
+
+                    <!-- Previous Message -->
+                    <div class="prev-msg-container">
+                        <p class="prev-msg">
+                            Hello there friend
+                        </p>
+                    </div>
+                </div>
+ 
+
+                <!-- Time of previous message -->
+                <div class="time-of-prev-msg-container">
+                    <p class="time-of-prev-msg">
+                        6:45PM
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        
+    </div>
+
+    <!-- JavaScript Files-->
+    <script src="/frontend/js/all-chats.js"></script>
+</body>
+</html>

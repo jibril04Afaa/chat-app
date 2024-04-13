@@ -12,17 +12,19 @@ function checkLoginCreds() {
         alert('Fields must not be empty! ')
     } else {
         // render HTML new chat page
-
+        window.location.href = 'all-chats.html'
     }
 }
 signupBtn.addEventListener('click', checkLoginCreds)
 
 // render login page if email exists
 
-function userNameExists() {
-    if () {
+// function userNameExists() {
+//     if () {
 
-    } else {
+//     } else {
 
-    }
-}
+//     }
+// }
+
+// new chat created
