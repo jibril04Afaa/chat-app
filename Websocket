@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+
+#define PORT 8080
+#define MAX_CLIENTS 10
+
+// Function to handle incoming WebSocket connections
+void handle_connection(int client_socket) {
+    // Handle WebSocket handshake
+    // Read and parse incoming HTTP request headers
+    // Send WebSocket handshake response
+
+    // Main loop for handling WebSocket messages
+    while (1) {
+        // Read incoming WebSocket message
+        // Parse message framing
+        // Handle message content
+
+        // Example: Echo message back to client
+        char buffer[1024];
+        ssize_t bytes_received = recv(client_socket, buffer, sizeof(buffer), 0);
+        if (bytes_received > 0) {
+            // Echo message back to client
+            send(client_socket, buffer, bytes_received, 0);
+        }
+    }
+}
+
+int main() {
+    int server_fd, client_socket;
+    struct sockaddr_in address;
+    int opt = 1;
+    int addrlen = sizeof(address);
+
+    // Create socket file descriptor
+    if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0) {
+        perror("socket failed");
+        exit(EXIT_FAILURE);
+    }
+
+    // Set socket options
+    if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(opt))) {
+        perror("setsockopt failed");
+        exit(EXIT_FAILURE);
+    }
+
+    address.sin_family = AF_INET;
+    address.sin_addr.s_addr = INADDR_ANY;
+    address.sin_port = htons(PORT);
+
+    // Bind socket to address and port
+    if (bind(server_fd, (struct sockaddr *)&address, sizeof(address))<0) {
+        perror("bind failed");
+        exit(EXIT_FAILURE);
+    }
+
+    // Listen for incoming connections
+    if (listen(server_fd, MAX_CLIENTS) < 0) {
+        perror("listen failed");
+        exit(EXIT_FAILURE);
+    }
+
+    // Accept incoming connections
+    while (1) {
+        if ((client_socket = accept(server_fd, (struct sockaddr *)&address, (socklen_t*)&addrlen)) < 0) {
+            perror("accept failed");
+            exit(EXIT_FAILURE);
+        }
+
+        // Handle incoming WebSocket connection
+        handle_connection(client_socket);
+    }
+
+    return 0;
+}
