@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Chat Room</title>
+
+    <link rel="stylesheet" href="/frontend/styles/new-chat.css">
+</head>
+
+<body>
+    <div class="container">
+        <!--Title-->
+        <span class="title">
+            <h1>Create New Chat Room</h1>
+        </span>
+
+        <!--Chat details-->
+        <div class="chat-details">
+            <!-- Recipient Name-->
+            <div class="recipient-name-container">
+                <label for="recipient name" class="recipient-label">Recipients</label>
+                <input type="text" class="recipient-name" name="name" required>
+            </div>
+            
+            <!-- Message for recipient-->
+            <div class="recipient-msg-container">
+                <label for="recipient msg" class="recipient-msg">Message</label>
+                <input type="text" class="recipient-msg" name="msg" required>
+            </div>
+
+            <!-- Send btn-->
+            <button class="send-btn">
+                Send
+            </button>
+        </div>
+        
+    </div>
+
+    <!-- JavaScript files-->
+    <script src="/frontend/js/new-chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+// container
+
+.recipient-name-container, .recipient-msg-container {
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    gap: 4rem;
+    
+    label {
+        font-size: 1.8rem;
+    }
+    input {
+        font-size: 1.5rem;
+        width: 200rem;
+        height: 10rem;
+    }
+}
+
+.send-btn {
+    background-color: #1ED467;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 1.2rem;
+    margin: 2rem;
+    cursor: pointer;
+    font-size: 2rem;
+    border: 0;
+}

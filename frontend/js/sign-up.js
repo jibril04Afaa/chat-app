@@ -11,7 +11,7 @@ function checkLoginCreds() {
     if (fullName.value === '' || email.value === '' || password.value === '') {
         alert('Fields must not be empty! ')
     } else {
-        // render HTML new chat page
+        // render HTML all chats page
         window.location.href = 'all-chats.html'
     }
 }
