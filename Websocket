@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <libwebsockets.h>  // Include libwebsockets header
+#include <netinet/in.h>
+
+#define PORT 8080
+#define MAX_CLIENTS 10
+
+// Callback function prototypes
+static int callback_http(struct lws *wsi, enum lws_callback_reasons reason, void *user, void *in, size_t len);
+static int callback_websockets(struct lws *wsi, enum lws_callback_reasons reason, void *user, void *in, size_t len);
+
+// List of protocols supported by this server
+static struct lws_protocols protocols[] = {
+    {"http-only", callback_http, 0, 0},
+    {"ws-only", callback_websockets, 0, 0},
+    {NULL, NULL, 0, 0} /* terminator */
+};
+
+// Function to handle incoming WebSocket connections
+void handle_connection(struct lws *wsi) {
+    // Implement WebSocket protocol handling here
+}
+
+int main() {
+    struct lws_context_creation_info info;
+    struct lws_context *context;
+    int port = PORT;
+    const char *interface = NULL;
+    int opts = 0;
+
+    memset(&info, 0, sizeof info);
+    info.port = port;
+    info.iface = interface;
+    info.protocols = protocols;
+    info.extensions = lws_get_internal_extensions();
+    info.ssl_cert_filepath = NULL;
+    info.ssl_private_key_filepath = NULL;
+    info.options = opts;
+
+    // Create libwebsockets context
+    if ((context = lws_create_context(&info)) == NULL) {
+        fprintf(stderr, "Error creating libwebsockets context\n");
+        return -1;
+    }
+
+    // Main event loop
+    while (1) {
+        lws_service(context, /* timeout_ms = */ 50);
+        // Insert your additional main loop logic here
+    }
+
+    // Destroy libwebsockets context
+    lws_context_destroy(context);
+
+    return 0;
+}
+
+// Callback for handling HTTP requests
+static int callback_http(struct lws *wsi, enum lws_callback_reasons reason, void *user, void *in, size_t len) {
+    // Handle HTTP requests here
+    return 0;
+}
+
+// Callback for handling WebSocket connections
+static int callback_websockets(struct lws *wsi, enum lws_callback_reasons reason, void *user, void *in, size_t len) {
+    switch (reason) {
+        case LWS_CALLBACK_ESTABLISHED:
+            // Handle new WebSocket connection
+            handle_connection(wsi);
+            break;
+
+        case LWS_CALLBACK_RECEIVE:
+            // Handle incoming WebSocket message
+            break;
+
+        case LWS_CALLBACK_CLOSED:
+            // Handle WebSocket connection closed
+            break;
+
+        default:
+            break;
+    }
+
+    return 0;
+}
