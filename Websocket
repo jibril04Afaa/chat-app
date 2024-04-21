@@ -5,7 +5,7 @@
 #include <libwebsockets.h>  // Include libwebsockets header
 #include <netinet/in.h>
 
-#define PORT 8080
+#define PORT 5500
 #define MAX_CLIENTS 10
 
 // Callback function prototypes
