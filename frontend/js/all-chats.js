@@ -10,23 +10,3 @@ createChatBtn.addEventListener('click', function() {
     
 })
 
-
-function showPrevMsg() {
-
-}
-
-function showMsgTime() {
-
-}
-
-
-// PFPs - // generate random images as pfps for simplicity
-
-function generateRandomPFP() {
-
-}
-
-// call functions
-showPrevMsg()
-showMsgTime()
-generateRandomPFP()

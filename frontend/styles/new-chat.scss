@@ -12,19 +12,19 @@ a {
 
 // container
 
-.recipient-name-container, .recipient-msg-container {
+.recipient-name-container, .recipient-msg-container, .chat-room-name-container  {
     padding: 1rem;
     margin: 1rem;
     display: flex;
     gap: 4rem;
     
     label {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
     input {
-        font-size: 1.5rem;
-        width: 200rem;
-        height: 10rem;
+        font-size: 1.3rem;
+        width: 150rem;
+        height: 5rem;
     }
 }
 

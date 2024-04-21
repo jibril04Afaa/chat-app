@@ -10,19 +10,19 @@ a {
   color: inherit;
 }
 
-.recipient-name-container, .recipient-msg-container {
+.recipient-name-container, .recipient-msg-container, .chat-room-name-container {
   padding: 1rem;
   margin: 1rem;
   display: flex;
   gap: 4rem;
 }
-.recipient-name-container label, .recipient-msg-container label {
-  font-size: 1.8rem;
+.recipient-name-container label, .recipient-msg-container label, .chat-room-name-container label {
+  font-size: 1.6rem;
 }
-.recipient-name-container input, .recipient-msg-container input {
-  font-size: 1.5rem;
-  width: 200rem;
-  height: 10rem;
+.recipient-name-container input, .recipient-msg-container input, .chat-room-name-container input {
+  font-size: 1.3rem;
+  width: 150rem;
+  height: 5rem;
 }
 
 .send-btn {
