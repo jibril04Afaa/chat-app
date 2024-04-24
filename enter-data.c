@@ -14,9 +14,12 @@ int main(int argc, char **argv) {
     GtkWidget *port_number_label;
     GtkWidget *port_number_text_field;
 
+<<<<<<< HEAD
     GtkWidget *name;
     GtkWidget *name_text_field;
 
+=======
+>>>>>>> a2ad0f61c21b04d1881ed5c0c8b1ee6dd2f0c8ec
     GtkWidget *continue_button;
 
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
@@ -36,6 +39,7 @@ int main(int argc, char **argv) {
     label = gtk_label_new("Enter some data to get started");
     gtk_box_pack_start(GTK_BOX(widget_container), label, FALSE, FALSE, 0);
 
+<<<<<<< HEAD
     // name
     name = gtk_label_new("Name: ");
     gtk_box_pack_start(GTK_BOX(widget_container), name, FALSE, FALSE, 0);
@@ -43,6 +47,8 @@ int main(int argc, char **argv) {
     name_text_field = gtk_entry_new();
     gtk_box_pack_start(GTK_BOX(widget_container), name_text_field, FALSE, FALSE, 0);
 
+=======
+>>>>>>> a2ad0f61c21b04d1881ed5c0c8b1ee6dd2f0c8ec
     // server address
     server_address_label = gtk_label_new("Server Address: ");
     gtk_box_pack_start(GTK_BOX(widget_container), server_address_label, FALSE, FALSE, 0);
@@ -59,6 +65,7 @@ int main(int argc, char **argv) {
 
 
     // continue button - creates a new chat window every time "continue is clicked"
+<<<<<<< HEAD
     void continueFunc() {
         system("./chat-window");
     }
@@ -75,6 +82,15 @@ int main(int argc, char **argv) {
 
 
 
+=======
+    // void continue() {
+
+    // }
+
+    continue_button = gtk_button_new_with_label("Click To Continue");
+    gtk_box_pack_start(GTK_BOX(widget_container), continue_button, FALSE, FALSE, 0);
+
+>>>>>>> a2ad0f61c21b04d1881ed5c0c8b1ee6dd2f0c8ec
     // render the window
     gtk_widget_show_all(window);
 
