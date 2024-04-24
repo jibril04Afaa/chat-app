@@ -59,11 +59,14 @@ int main(int argc, char **argv) {
 
 
     // continue button - creates a new chat window every time "continue is clicked"
-    // void continue() {
-
-    // }
+    void continueBTN(){
+        system("./chat-window");
+    }
 
     continue_button = gtk_button_new_with_label("Click To Continue");
+    // Event listener for continue button
+    g_signal_connect(continue_button, "clicked", G_CALLBACK(continueBTN), NULL);
+
     gtk_box_pack_start(GTK_BOX(widget_container), continue_button, FALSE, FALSE, 0);
 
     // render the window
