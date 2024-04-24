@@ -11,9 +11,9 @@ int main(int argc, char **argv) {
 
     GtkWidget *chat_text_field; // messages are entered here
 
-    GtkWidget *send_btn;
+    GtkWidget *display_label;
 
-    int sockfd; // socket file descriptor
+    GtkWidget *send_btn;
 
 
     // default settings
@@ -30,11 +30,20 @@ int main(int argc, char **argv) {
     chat_text_field = gtk_entry_new();
     gtk_box_pack_start(GTK_BOX(widget_container), chat_text_field, FALSE, FALSE, 0);
 
+
     /*Send button - when send is clicked, it should show the 
-    chat in a separate text field above 
+    chat in a separate label below 
     */ 
     void sendFunc() {
-        printf("Message sent");
+        // display label to show chats in real time
+        display_label = gtk_label_new("");
+        gtk_box_pack_start(GTK_BOX(widget_container), display_label, FALSE, FALSE, 0);
+
+        // append chats to display_label
+        
+        // Clear entry field after sending text data
+        gtk_entry_set_text(GTK_ENTRY(chat_text_field), ""); 
+
     }
 
     send_btn = gtk_button_new_with_label("Send");
