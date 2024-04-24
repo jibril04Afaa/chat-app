@@ -24,9 +24,6 @@ GtkWidget *name_entry; // Declare name_entry globally
 //     }
 // }
 
-void continueBTN() {
-    system("./chat-window");
-}
 
 
 int main(int argc, char **argv) {
@@ -37,7 +34,9 @@ int main(int argc, char **argv) {
 
     GtkWidget *server_address_label;
     GtkWidget *port_number_label;
+    GtkWidget *port_number_text_field;
     GtkWidget *name;
+    GtkWidget *name_field;
 
     GtkWidget *continue_button;
 
@@ -79,9 +78,15 @@ int main(int argc, char **argv) {
     name_entry = gtk_entry_new(); // Initialize name_entry
     gtk_box_pack_start(GTK_BOX(widget_container), name_entry, FALSE, FALSE, 0);
 
-    // continue button - creates a new chat window every time "continue" is clicked
+    // continue button - creates a new chat window every time "continue is clicked"
+    void continueBTN(){
+        system("./chat-window");
+    }
+
     continue_button = gtk_button_new_with_label("Click To Continue");
+    // Event listener for continue button
     g_signal_connect(continue_button, "clicked", G_CALLBACK(continueBTN), NULL);
+
     gtk_box_pack_start(GTK_BOX(widget_container), continue_button, FALSE, FALSE, 0);
 
     // render the window
