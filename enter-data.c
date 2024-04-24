@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
     GtkWidget *port_number_label;
     GtkWidget *port_number_text_field;
     GtkWidget *name;
-    GtkWidget *name_field
+    GtkWidget *name_field;
 
     GtkWidget *continue_button;
 
