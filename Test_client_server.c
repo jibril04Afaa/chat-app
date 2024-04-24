@@ -1,4 +1,3 @@
-
 #include <gtk/gtk.h>
 #include <stdlib.h>
 #include <string.h>
@@ -16,25 +15,8 @@ int server_port;
 
 void connect_to_server(GtkWidget *widget, gpointer data);
 
-void *receive_messages(void *data) {
-    GtkTextBuffer *buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(message_display));
-    while (1) {
-        char msg[1024];
-        ssize_t bytes_received = recv(sockfd, msg, sizeof(msg), 0);
-        if (bytes_received > 0) {
-            msg[bytes_received] = '\0';
-            gtk_text_buffer_insert_at_cursor(buffer, msg, -1);
-            gtk_text_buffer_insert_at_cursor(buffer, "\n", -1);
-        } else if (bytes_received == 0) {
-            break;
-        } else {
-            perror("Error receiving message");
-        }
-    }
-    return NULL;
-}
-
 void send_message(GtkWidget *widget, gpointer data) {
+    const gchar *name = gtk_entry_get_text(GTK_ENTRY(name_entry));
     const gchar *message = gtk_entry_get_text(GTK_ENTRY(message_entry));
     if (strlen(message) == 0) {
         GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data),
@@ -46,9 +28,39 @@ void send_message(GtkWidget *widget, gpointer data) {
         gtk_widget_destroy(dialog);
         return;
     }
-
     send(sockfd, message, strlen(message), 0);
-    gtk_entry_set_text(GTK_ENTRY(message_entry), ""); // Clear the message entry after sending
+
+    // Append the sent message to the message display box
+    GtkTextBuffer *buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(message_display));
+    gchar *display_msg = g_strdup_printf("%s: %s", name, message);
+    gtk_text_buffer_insert_at_cursor(buffer, display_msg, -1);
+    gtk_text_buffer_insert_at_cursor(buffer, "\n", -1);
+    g_free(display_msg);
+
+    // Clear the message entry after sending
+    gtk_entry_set_text(GTK_ENTRY(message_entry), "");
+}
+
+
+void *receive_messages(void *data) {
+    GtkTextBuffer *buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(message_display));
+    while (1) {
+        char msg[1024];
+        ssize_t bytes_received = recv(sockfd, msg, sizeof(msg), 0);
+        if (bytes_received > 0) {
+            msg[bytes_received] = '\0';
+            // Insert name and message into the message display box
+            gchar *display_msg = g_strdup_printf("%s: %s", gtk_entry_get_text(GTK_ENTRY(name_entry)), msg);
+            gtk_text_buffer_insert_at_cursor(buffer, display_msg, -1);
+            gtk_text_buffer_insert_at_cursor(buffer, "\n", -1);
+            g_free(display_msg);
+        } else if (bytes_received == 0) {
+            break;
+        } else {
+            perror("Error receiving message");
+        }
+    }
+    return NULL;
 }
 
 void connect_to_server(GtkWidget *widget, gpointer data) {
@@ -113,6 +125,9 @@ void connect_to_server(GtkWidget *widget, gpointer data) {
         perror("Error creating thread");
         exit(EXIT_FAILURE);
     }
+
+    // Start the GTK main loop
+    gtk_main();
 }
 
 int main(int argc, char *argv[]) {
@@ -147,4 +162,8 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
+
+
+
 
