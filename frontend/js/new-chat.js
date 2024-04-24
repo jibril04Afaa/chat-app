@@ -35,9 +35,6 @@ let newchatRoomName = document.createElement('div')
 newPrevMsg.innerHTML = 'this is a new previous message'
 chatParentContainer.appendChild(newPrevMsg)
 
-if (newPrevMsg) {
-  alert("created")
-}
 
 
 // generates new chat room

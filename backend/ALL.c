@@ -31,7 +31,7 @@ int create_new_chat_room_handler(void *cls, struct MHD_Connection *connection,
                                  const char *version, const char *upload_data,
                                  size_t *upload_data_size, void **con_cls) {
     // Serve the HTML file for creating a new chat room
-    const char *file_path = "/path/to/new-chat-room.html";
+    const char *file_path = "/frontend/html/new-chat.html";
     struct MHD_Response *response;
     int ret;
 

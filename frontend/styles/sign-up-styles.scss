@@ -26,18 +26,18 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .sign-up-text {
-        margin: 2rem;
-        h1 {
+    // .login-text {
+    //     margin: 2rem;
+    //     h1 {
 
-        }
-    }
-    .signup-details-container {
+    //     }
+    // }
+    .login-details-container {
         // display: flex;
         // flex-direction: column;
         // justify-content: center;
         // align-items: center;
-        .signup-form {
+        .login-form {
             .form-container {
                 //border: 2px solid red;
                 display: flex;
@@ -76,7 +76,7 @@ a {
     }
     
     // signup Button
-    .signup-btn-container {
+    .login-btn-container {
         button {
             background-color: #1ED467;
             border-radius: 10px;

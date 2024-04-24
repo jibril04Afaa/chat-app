@@ -3,51 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Chat</title>
 
-    <!-- Stylesheets-->
-    <link rel="stylesheet" href="/frontend/styles/sign-up-styles.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/frontend/styles/all-chats-styles.css">
 </head>
-
 <body>
     <div class="container">
-        <div class="sign-up-text">
-            <h1>Sign Up!</h1>
+        <!-- Title -->
+        <span class="title">
+            <h1>All Chat Rooms</h1>
+        </span>
+
+        <!-- Create New Chat-->
+        <div class="create-new-chat-container">
+            <button class="create-new-chat">
+                Create New Chat Room
+            </button>
         </div>
+        
 
-        <div class="signup-details-container">
-            <form class="signup-form">
-                <div class="form-container">
+        <!-- Actual chats -->
+        <div class="display-chats-container">
 
-                    <!-- Name-->
-                    <label for="email" class="name-label">Full Name</label>
-                    <input type="text" class="name-input" name="name" required>
+            <!-- Chat Room-->
+            <div class="individual-chat-container">
 
-                    <br>
-                    <br>
-
-                    <!-- Email-->
-                    <label for="email" class="email-label">Email</label>
-                    <input type="text" class="email-input" name="name" required>
-
-                    <br>
-                    <br>
-
-                    <!-- Password-->
-                    <label for="email" class="password-label">Password</label>
-                    <input type="text" class="password-input" name="password" required>
+                <!-- Image -->
+                <div class="profile-pic-container">
+                    <img src="/frontend/img/pfps/barry.jpeg" width="200" height="200" class="profile-pic">
                 </div>
-            </form>
+
+                <div class="contact-data">
+                    <!-- Contact Name -->
+                    <div class="contact-name-container">
+                        <a href="/frontend/html/inner-chat-room.html">
+                            <h3 class="contact-name">The Flash Chat Room</h3>
+                        </a>
+
+                    </div>
+
+                    <!-- Previous Message -->
+                    <div class="prev-msg-container">
+                        <p class="prev-msg">
+                            Hello friends 😁, it's a pleasure. 
+                        </p>
+                    </div>
+                </div>
+ 
+
+                <!-- Time of previous message -->
+                <div class="time-of-prev-msg-container">
+                    <p class="time-of-prev-msg">
+                        6:45PM
+                    </p>
+                </div>
+
+            </div>
         </div>
 
-        <!-- Login Button-->
-        <div class="signup-btn-container">
-            <button class="login-btn">Login</button>
-        </div>
-
-        <!-- JavaScript Files -->
-        <script src="/frontend/js/sign-up.js"></script>
-
+        
     </div>
+
+    <!-- JavaScript Files-->
+    <script src="/frontend/js/new-chat.js"></script>
+    <script src="/frontend/js/all-chats.js"></script>
+
 </body>
 </html>

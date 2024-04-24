@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background-color: #1ED467;
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 1.2rem;
+  margin: 2rem;
+  cursor: pointer;
+  font-size: 2rem;
+  border: 0;
+}
+
+input {
+  font-size: 3rem;
+}
+
+.container .messages {
+  border: 2px solid red;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+}/*# sourceMappingURL=inner-chat-room.css.map */

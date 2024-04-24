@@ -24,33 +24,30 @@ a {
   justify-content: center;
   align-items: center;
 }
-.container .sign-up-text {
-  margin: 2rem;
-}
-.container .signup-details-container .signup-form .form-container {
+.container .login-details-container .login-form .form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.container .signup-details-container .signup-form .form-container .name-label {
+.container .login-details-container .login-form .form-container .name-label {
   font-size: 2rem;
 }
-.container .signup-details-container .signup-form .form-container .name-input {
+.container .login-details-container .login-form .form-container .name-input {
   font-size: 2rem;
 }
-.container .signup-details-container .signup-form .form-container .email-label {
+.container .login-details-container .login-form .form-container .email-label {
   font-size: 2rem;
 }
-.container .signup-details-container .signup-form .form-container .email-input {
+.container .login-details-container .login-form .form-container .email-input {
   font-size: 2rem;
 }
-.container .signup-details-container .signup-form .form-container .password-label {
+.container .login-details-container .login-form .form-container .password-label {
   font-size: 2rem;
 }
-.container .signup-details-container .signup-form .form-container .password-input {
+.container .login-details-container .login-form .form-container .password-input {
   font-size: 2rem;
 }
-.container .signup-btn-container button {
+.container .login-btn-container button {
   background-color: #1ED467;
   border-radius: 10px;
   font-weight: bold;
