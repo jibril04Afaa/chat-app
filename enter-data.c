@@ -13,6 +13,8 @@ int main(int argc, char **argv) {
     GtkWidget *server_address_text_field;
     GtkWidget *port_number_label;
     GtkWidget *port_number_text_field;
+    GtkWidget *name;
+    GtkWidget *name_field
 
     GtkWidget *continue_button;
 
@@ -46,6 +48,14 @@ int main(int argc, char **argv) {
 
     port_number_text_field = gtk_entry_new();
     gtk_box_pack_start(GTK_BOX(widget_container), port_number_text_field, FALSE, FALSE, 0);
+
+
+    // name
+    name = gtk_label_new("Name: ");
+    gtk_box_pack_start(GTK_BOX(widget_container), name, FALSE, FALSE, 0);
+
+    name_field = gtk_entry_new();
+    gtk_box_pack_start(GTK_BOX(widget_container), name_field, FALSE, FALSE, 0);
 
 
     // continue button - creates a new chat window every time "continue is clicked"
