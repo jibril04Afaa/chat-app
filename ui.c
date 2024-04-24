@@ -8,10 +8,12 @@ int main(int argc, char **argv) {
 
     GtkWidget *window; // initialize window variable
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-    gtk_widget_show_all(window);
 
     // set a default size
     gtk_window_set_default_size(GTK_WINDOW(window), 900, 900);
+
+    // set window title
+    gtk_window_set_title(GTK_WINDOW(window), "Chat App");
 
     // set the default position to be centered
     gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
@@ -22,7 +24,9 @@ int main(int argc, char **argv) {
     // render the window
     gtk_widget_show_all(window);
 
+    // GTK main loop
     gtk_main();
+
     return 0;
 } 
 
